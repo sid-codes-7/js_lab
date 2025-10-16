@@ -1,0 +1,33 @@
+var temp = parseInt(prompt("What is the current Temperature?"));
+var c_or_f = prompt("Did you answer it in Celcius(c) or Fahrenheit(f)?");
+var c_to_f = (temp * (9/5) + 32);
+var f_to_c = (temp-32)*(5/9);
+var newTemp = 0;
+function theTemp() {
+  var symbol;
+  if (c_or_f == "c") {
+    newTemp = c_to_f;
+    symbol = "f";
+  } else if (c_or_f == "f") {
+    newTemp = f_to_c;
+    symbol = "c";
+  }
+  if (temp == 0 && c_or_f == "c") {
+    console.log("The converted temperature is 32f");
+    return 0;
+  }
+  if (temp == 0 && c_or_f == "f") {
+    console.log("The converted temperature is -17.78c");
+    return 0;
+  }
+  if (!c_or_f) {
+    console.log("TYPE SOMETHING/NUMBER ONLY NO TEXT!");
+    return 0;
+  }
+  if ((!temp)) {
+    console.log("TYPE SOMETHING/NUMBER ONLY NO TEXT!");
+    return 0;
+  }
+  console.log(("The converted temperature is "+ newTemp) + symbol);
+}
+theTemp();
