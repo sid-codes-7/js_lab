@@ -1,0 +1,32 @@
+var score_a = parseInt(prompt("Enter a value of player A"));
+var score_b = parseInt(prompt("Enter a value of player B"));
+function total_score() {
+  if (score_a < 0) {
+    console.log("score cant be less than 0, please try again!");
+    return 0;
+  }
+  if (score_b < 0) {
+    console.log("score cant be less than 0, please try again!");
+    return 0;
+  }
+  if (score_a > score_b) {
+    console.log("Player A is the winner with a score of: " + score_a);
+    console.log("They won by " + (score_a - score_b) + " points.");
+  }
+  if (score_b > score_a) {
+    console.log("Player B is the winner with a score of: " + score_b);
+    console.log("They won by " + (score_b - score_a) + " points.");
+  }
+  if (score_a == score_b) {
+    console.log("It's a tie! Both players scored " + score_a + " points");
+  }
+  if (!score_a) {
+    console.log("ERROR: Must be a number, no letters. Please try again.");
+    return 0;
+  }
+  if (!score_b) {
+    console.log("ERROR: Must be a number, no letters. Please try again.");
+    return 0;
+  }
+}
+total_score();
