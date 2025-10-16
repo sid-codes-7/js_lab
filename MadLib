@@ -1,0 +1,25 @@
+onEvent("next_button", "click", function( ) {
+  setScreen("message_screen");
+  var Name = getText("nameInput");
+  var City = getText("cityInput");
+  var Age = getText("ageInput");
+  var Color = getText("colorInput");
+  var Food = getText("foodInput");
+  var message = "Hello, " + Name + " Welcome to your version of the Little Red Riding Hood! \n" + "\n" + "Once upon a time, " + Name + " was traveling through " + City + " and saw the place where you wanted to go in to visit grandma who was " + Age + " \n" + "\n" + "As you open the door and walk in, you see a wolf eating the grandma and the wolf also ate a " + Color + " shoe \n" + "\n" + "You save grandma at the end and both of you eat " + Food + " as a celebration" ;
+  if (Age >= 40) {
+    console.log("WOW!");
+    playSound("sound://category_alerts/vibrant_game_carton_start_game_2_long.mp3", false);
+  } else {
+    console.log("Very young!");
+    playSound("sound://category_achievements/vibrant_game_game_gold_tresure_chest_open.mp3", false);
+  }
+  setText("message_area", message);
+});
+onEvent("home_button", "click", function( ) {
+  setScreen("main_screen");
+  setText("nameInput", "");
+  setText("cityInput", "");
+  setText("ageInput", "");
+  setText("colorInput", "");
+  setText("foodInput", "");
+});
