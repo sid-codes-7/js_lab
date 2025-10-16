@@ -1,0 +1,49 @@
+var original_price = parseInt(prompt("What is the original price of your item? "));
+
+var percent_off = parseInt(prompt("What is the percent off of your item? "));
+
+var newPrice = (percent_off / 100);
+var price_now = 0;
+function total_bill() {
+  
+  if (percent_off >= 10) {
+    price_now = original_price * newPrice;
+  } else if (0 < percent_off < 10) {
+    price_now = original_price;
+  }
+  if (percent_off < 0) {
+    console.log("PERCENT MUST BE GREATER THAN 0");
+    return 0;
+  }
+  if (original_price < 0) {
+    console.log("ORIGINAL PRICE MUST BE GREATER THAN 0");
+    return 0;
+  }
+  if (original_price > 9999999999) {
+    console.log("NO WAY ITEM COSTS THAT MUCH, PLEASE TRY AGAIN!");
+    return 0;
+  }
+  if (percent_off > 9999999999) {
+    console.log("NO WAY PERCENT OFF IS THAT MUCH, PLEASE TRY AGAIN!");
+    return 0;
+  }
+  if (percent_off == 0) {
+    console.log("PERCENT OFF MUST BE GREATER THAN 0.");
+    return 0;
+  }
+  if (original_price == 0) {
+    console.log("ORIGINAL PRICE MUST BE GREATER THAN 0");
+    return 0;
+  }
+  if (!original_price) {
+    console.log("TYPE A NUMBER ONLY");
+    return 0;
+  }
+  if (!percent_off) {
+    console.log("TYPE A NUMBER ONLY");
+    return 0;
+  }
+  console.log("Your final price is: $"+ price_now);
+  console.log("and you saved " + (original_price - price_now));
+}
+total_bill();
