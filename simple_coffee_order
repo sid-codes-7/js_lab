@@ -1,0 +1,33 @@
+var small_coffee = 3;
+var large_coffee = 5;
+var coffee_choice = prompt("Do you want a small or large coffee?");
+var coffee_amount = parseInt(prompt("How many "+ coffee_choice + " do you want?"));
+
+function total_bill() {
+  var coffee_pick;
+  if (coffee_choice == "small") {
+    coffee_pick = small_coffee * coffee_amount;
+  } else if ((coffee_choice == "large")) {
+    coffee_pick = large_coffee * coffee_amount;
+  }
+  if (coffee_amount >= 5) {
+    console.log("That's a lot of coffee!");
+  }
+  if (coffee_amount == 0) {
+    console.log("Please type a number greater than 0.");
+    return 0;
+  }
+  if (!coffee_choice) {
+    console.log("The only options are small or large. Please Try again");
+    return 0;
+  }
+  if (!coffee_amount) {
+    console.log("You can only type integers/numbers, no letters, vise versa. Please Try again");
+    return 0;
+  }
+  console.log((((("Your order: "+ coffee_amount) + " " + coffee_choice) + " coffee(s).")));
+  console.log("Total cost: $" + coffee_pick);
+}
+total_bill();
+
+
